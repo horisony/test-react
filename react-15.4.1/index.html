@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript" src = "build/react.js"></script>
+	<script type="text/javascript" src = "build/react-dom.js"></script>
+	<script type="text/javascript" src = "https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.18.1/babel.min.js"></script>
+</head>
+<body>
+	<div id = "area"></div>
+
+	<script type="text/babel">
+		var Hi = React.createClass({
+
+			proTypes: {
+				name: React.PropTypes.string.isRequired
+			},
+
+			getDefaultProps: function(){
+				return {
+					name: "Bao"
+				}
+			},
+
+			render: function(){
+				return ( <h1> Hi {this.props.name}</h1> )
+			}
+		});
+		ReactDOM.render(
+			<Hi />,
+			document.getElementById('area')
+		);
+	</script>
+</body>
+</html>
