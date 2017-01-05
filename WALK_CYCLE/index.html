@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		body{
+			margin: 0;
+			padding: 0;
+			font-family: Verdana,sans-serif;
+		}
+		.bg-container{
+			position: absolute;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+			background-color: #454A4C;
+			background-image: url(walking-bg.png);
+			background-repeat-y: no-repeat;
+		}
+		.bg-animate{
+			animation: bg-moving 60s;
+			animation-timing-function: linear;
+		}
+		.people{
+			position: absolute;
+			top: 220px;
+			left: 200px;
+		}
+		.walking{
+			width: 200px;
+			height: 400px;
+			background-image: url(walking3.png);
+			background-position: 0px 0px;	
+		}
+		.walking-animate{
+			animation: walking-anim 1s infinite;
+		}
+		.line{
+			width: 290px;
+			height: 1px;
+			background: rgba(255,255,255,0.5);
+			top: 600px;
+			position: relative;
+		}
+		.time-dot{
+			width: 32px;
+			height: 32px;
+			background: rgba(255,255,255,0.2);
+			border-radius: 50%;
+			position: absolute;
+			/*top: 585px;*/
+			left: 274px;
+			top: -16px;
+		}
+		.time-dot-small{
+			width: 16px;
+			height: 16px;
+			background: rgba(255,255,255,0.4);
+			border-radius: 50%;
+			position: absolute;
+			left: 282px;
+			top: -8px;
+		}
+		.event-txt{
+			color: #156279;
+			width: 300px;
+			text-align: right;
+			position: absolute;
+			left: 70px;
+			top: 160px;
+		}
+		.discrip{
+			font-size: 14px;
+			padding-top: 12px;
+			color: #666;
+		}
+		.time-txt{
+			color: white;
+			font-size: 16px;
+			position: absolute;
+			left: 254px;
+			text-align: center;
+			top: 20px;
+		}
+		.bubble{
+			/*width: 160px;
+			height: 160px;
+			background: url(bubble.svg);
+			background-repeat: no-repeat;*/
+			position: fixed;
+			left: 340px;
+			top: 110px;
+		}
+		#fashion{
+			background-image: url(fashion.jpg);
+		}
+		@keyframes walking-anim{
+			0% {background-position-x: 1400px; }
+			12.5% {background-position-x: 1400px; }
+			12.501% {background-position-x: 1200px; }
+			25% {background-position-x: 1200px; }
+			25.001% {background-position-x: 1000px; }
+			37.5% {background-position-x: 1000px; }
+			37.501% {background-position-x: 800px; }
+			50% {background-position-x: 800px; }
+			50.001% {background-position-x: 600px; }
+			62.5% {background-position-x: 600px; }
+			62.501% {background-position-x: 400px; }
+			75% {background-position-x: 400px; }
+			75.001% {background-position-x: 200px; }
+			87.5% {background-position-x: 200px; }
+			87.501% {background-position-x: 0px; }
+			99.9999% {background-position-x: 0px; }
+		}
+		@keyframes bg-moving{
+			100% {background-position-x: 0px }
+			0% {background-position-x: 8000px;}
+		}
+		.musicIcon{
+			width: 36px;
+			height: 36px;
+			background-image: url(music.png);
+			background-position: center;
+			background-repeat: no-repeat;
+			position: fixed;
+			top: 24px;
+			right: 30px;
+		}
+		.musicAnimate{
+			animation: rotating 1.2s infinite;
+			animation-timing-function: linear;
+		}
+		@keyframes rotating{
+			0% {transform: rotate(0deg);}
+			100% { transform: rotate(360deg); }
+		}
+		.dot-animate{
+			animation: glowing .8s infinite;
+		}
+		@keyframes glowing{
+			0%{
+				transform: scale(0);
+			}
+			100%{
+				transform: scale(1);
+			}
+		}
+	</style>
+</head>
+<body>
+<div class="bg-container bg-animate">
+	<a href="javascript:playPause();"><div class="musicIcon musicAnimate" id="music_btn"></div></a>
+	<audio id="music" autoplay="autoplay" loop="-1">
+	<source src="mario_1.mp3" type="audio/mp3" />
+		<source src="mario_1.ogg" type="audio/ogg" />
+		<embed  src="mario_1.mp3" />
+	</audio>
+	<!-- <bgsound url="mario_1.mp3" loop=auto></bgsound> -->
+	<div class="event-txt">
+		First Purchase
+		<div class="discrip">2016 Fashion Sexy Women Summer Chiffon Long Sleeve T-Shirt Tops Blouse</div>
+	</div>
+	<svg class="bubble" width="200" height="200"version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+		 viewBox="0 0 150 150" enable-background="new 0 0 150 150" xml:space="preserve">
+		 <defs>
+		 	<pattern id="img1" patternUnits="userSpaceOnUse" width="160" height="160">
+		 		<image xlink:href="fashion.jpg" x="30" y="30" width="90" height="90" />
+		 	</pattern>
+		 </defs>
+	<g>
+		<image overflow="visible" opacity="0.75" width="590" height="590" xlink:href="BFC8B6339AD39AA5.png"  transform="matrix(0.24 0 0 0.24 3.2668 -0.3968)"></image>
+		<g>
+
+			<path fill="url(#img1)" d="M74.1,33.6c-19.2,0-34.8,15.6-34.8,34.8c0,5.8,2.5,12.3,2.5,12.3c0.8,2.1,1.2,5.5,0.9,7.7l-0.9,6.8
+				c-0.3,2.2,1.3,3.8,3.5,3.7l6.6-0.5c2.2-0.2,5.6,0.4,7.6,1.3c0,0,7.9,3.5,14.5,3.5c19.2,0,34.8-15.6,34.8-34.8S93.3,33.6,74.1,33.6
+				z"/>
+		</g>
+	</g>
+	</svg>
+
+	<div class="people">
+		<div class="walking walking-animate"></div>
+	</div>
+
+	<div class="line">
+		<div class="time-dot dot-animate"></div>
+		<div class="time-dot-small " ></div>
+		<div class="time-txt">
+			2016.2.1
+		</div>
+	</div>
+</div>
+
+	<script type="text/javascript">	
+		function playPause() { 
+		    var music = document.getElementById('music'); 
+		    var music_btn = document.getElementById('music_btn'); 
+		    if (music.paused){ 
+		    	music.play();
+		        music_btn.classList.add("musicAnimate");
+		    } 
+		    else { 
+		         music.pause();  
+		        music_btn.classList.remove("musicAnimate");
+		    } 
+		} 
+	</script>
+</body>
+</html>
